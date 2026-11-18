@@ -2,7 +2,6 @@ package com.sms.controller;
 
 import com.sms.service.*;
 import java.util.Scanner;
-
 public class Student_controller {
 	
 	StudentService service=new StudentService();
@@ -50,11 +49,19 @@ public class Student_controller {
 		System.out.println("Enter PhoneNumber");
 		long Number=ref.nextLong();
 		
-		Student student=new Student(Id,Name,Department,Email,Number;)
+		Student student=new Student(Id,Name,Department,Email,Number);
 		boolean result=service.addStudent(student);
 		if(result) {
 			System.out.println("student added successfully");
 		}
-		
+	}
+	public void ViewStudent() {
+		List<Student> student=service.findAll();
+		if(student=null) {
+			System.out.println("No Data");
+		}
+		else {
+			System.out.println(student);
+		}
 	}
 }
